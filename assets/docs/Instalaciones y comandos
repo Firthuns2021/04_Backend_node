@@ -1,0 +1,15 @@
+npm init –y
+
+npm install express –save
+npm install express@17.17.1 --save
+npm install -g nodemon
+npm install mongoose --save
+npm i dotenv #paquetes de variables entorno, para lectura de archivo .env
+npm i cors
+
+npm i cors # en esta ocasion no lo he utilizado
+
+mongodb+srv://ferRoot:ferRoot@cluster0.cyira.mongodb.net/
+
+
+# npm run dev
