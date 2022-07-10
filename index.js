@@ -19,21 +19,20 @@ app.use((req,res,next)=>{
     res.header('Allow','GET, PUT, POST, DELETE, OPTIONS');
     next();
 });
+
+
+// Lectura y parseo del body
+app.use( express.json() );
+
+
 // Base de datos
 dbConnection();
 
 // console.log(process.env);
 // Rutas
 
-app.get( '/', (req, res) => {
-
-    res.json({
-        ok: true,
-        msg: 'Hola Mundo'
-    });
-
-});
-
+app.use( '/api/usuarios', require('./routes/usuariosRoute') );
+app.use( '/api/login', require('./routes/authRoute') );
 
 
 app.listen( process.env.PORT, () => {
