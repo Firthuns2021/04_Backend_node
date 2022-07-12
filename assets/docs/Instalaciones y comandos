@@ -10,8 +10,12 @@ npm i cors # en esta ocasion no lo he utilizado
 
 npm i express-validator
 
- npm i bcryptjs  #encriptar contraseñas
+npm i bcryptjs  #encriptar contraseñas
 npm i jsonwebtoken # paquete para generar token
+
+npm i express-fileupload #para subida de archivos https://www.npmjs.com/package/express-fileupload
+
+npm i uuid #para tener un identificador único para cada imagen
 
 
 mongodb+srv://ferRoot:ferRoot@cluster0.cyira.mongodb.net/

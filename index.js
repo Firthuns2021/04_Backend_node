@@ -33,6 +33,13 @@ dbConnection();
 
 app.use( '/api/usuarios', require('./routes/usuariosRoute') );
 app.use( '/api/login', require('./routes/authRoute') );
+//
+app.use( '/api/hospitales', require('./routes/hospitalesRoute') );
+app.use( '/api/medicos', require('./routes/medicosRoute') );
+app.use( '/api/todo', require('./routes/busquedasRoute') );
+//
+app.use( '/api/upload', require('./routes/uploadsRoute') );
+
 
 
 app.listen( process.env.PORT, () => {
