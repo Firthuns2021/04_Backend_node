@@ -17,8 +17,11 @@ npm i express-fileupload #para subida de archivos https://www.npmjs.com/package/
 
 npm i uuid #para tener un identificador único para cada imagen
 
-
-
+# https://developers.google.com/identity/gsi/web/guides/verify-google-id-token
+npm install google-auth-library --save
 
 
 # npm run dev
+
+
+
