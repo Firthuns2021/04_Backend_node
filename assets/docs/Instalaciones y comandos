@@ -18,7 +18,7 @@ npm i express-fileupload #para subida de archivos https://www.npmjs.com/package/
 npm i uuid #para tener un identificador único para cada imagen
 
 
-mongodb+srv://ferRoot:ferRoot@cluster0.cyira.mongodb.net/
+
 
 
 # npm run dev
