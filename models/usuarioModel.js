@@ -14,6 +14,7 @@ const UsuarioSchema = Schema({
 //renombrar un atributo de usuario, que dicho nombre del atributo
 // viene por defecto de la base de datos MONGODB
 //Veremos en vez de _id  >>>   UID
+// ademas estamos extrayendo del objeto el password
 UsuarioSchema.method('toJSON', function() {
     const { __v, _id, password, ...object } = this.toObject();
     object.uid = _id;
