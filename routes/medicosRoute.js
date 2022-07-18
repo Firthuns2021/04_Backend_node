@@ -10,7 +10,8 @@ const {
     getMedicos,
     crearMedico,
     actualizarMedico,
-    borrarMedico
+    borrarMedico,
+    getMedicoById
 } = require('../controllers/medicosCtrl')
 
 
@@ -42,6 +43,10 @@ router.delete( '/:id',
     borrarMedico
 );
 
+router.get( '/:id',
+    validarJWT,
+    getMedicoById
+);
 
 
 module.exports = router;

@@ -4,12 +4,23 @@ const bcrypt = require('bcryptjs');
 const Usuario = require('../models/usuarioModel');
 const { generarJWT } = require('../helpers/jwt');
 
-
+/**
+ ** sI EL USUARIO NO DESEA VER ALGUN USUARIO EXPECIFICO.
+ ** EL BACKEND DEVOLVERÁ LOs 5 primeros usuarios de la base de datos
+ ** en cambio si da al boton de siguiente tanda de usuarios, el backend recibira un valor
+ ** numerico, y será a partir de la siguiente posición al numero donde contará 5 usuarios y los
+ ** reenviará
+ * una mejora sería poder elegir la cantidad
+ * http://localhost:3000/api/usuarios?desde=12&cantidad=10
+ */
 
 const getUsuarios = async(req, res) => {
 
     const desde = Number(req.query.desde) || 0; // si no viene nada desde= 0
+    const totalUsuarios = Number(req.query.cantidad) || 5;
     console.log(desde)
+
+
 
     // const usuarios = await Usuario.find({}, 'nombre email role google');
     // promise.all -> coleccion de promesas. usuario.find.skip.limit primera promesa
@@ -18,7 +29,7 @@ const getUsuarios = async(req, res) => {
         Usuario
             .find({}, 'nombre email role google img')
             .skip( desde )
-            .limit( 5 ),
+            .limit( totalUsuarios ),
 
         Usuario.countDocuments()
     ]);
