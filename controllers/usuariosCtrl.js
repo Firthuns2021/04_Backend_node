@@ -103,10 +103,11 @@ const actualizarUsuario = async (req, res = response) => {
 
     const uid = req.params.id;
 
-
+    console.log(uid)
     try {
 
         const usuarioDB = await Usuario.findById( uid );
+
         // 1º VALIDACIÓN POR ID
         if ( !usuarioDB ) {
             return res.status(404).json({
@@ -116,7 +117,7 @@ const actualizarUsuario = async (req, res = response) => {
         }
 
         // Actualizaciones
-        // console.log( req.body);
+        console.log( req.body);
         const { password, google, email, ...campos } = req.body; // DESESTRUCTURAMOS EL OBJETO Y COGEMOS LOS ATRIBUTOS QUE NECESITAMOS PARA ACTUALIZAR...
 
         if ( usuarioDB.email !== email ) {
